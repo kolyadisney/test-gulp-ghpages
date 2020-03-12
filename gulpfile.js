@@ -10,7 +10,7 @@ var gulp = require("gulp"),
 
 var paths = {
     styles: {
-        src: "./src/sass/*.sass",
+        src: "./src/scss/*.scss",
         dest: "build/css"
     },
     
@@ -68,7 +68,7 @@ function otherFiles() {
 function reload() {
     browserSync.reload();
 }
-
+//watch changes and livereload with local server
 function watch() {
     browserSync.init({
         server: {
@@ -84,7 +84,9 @@ function watch() {
 }
 
 function deploy(cb) {
-    ghPages.publish(path.join(process.cwd(), './build'), cb);
+    ghPages.publish(path.join(process.cwd(), './build'), {
+        branch: 'gh-pages'
+    }, cb);
 }
 
 //export functions

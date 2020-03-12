@@ -16,7 +16,8 @@
 
     <title>{% if title %}{{ title }}{% else %}Template{% endif %}</title>
 
-    <link rel="canonical" href="https://flo8.github.io/flo8/">
+    <link rel="canonical" href="https://flo8.github.io/flo8/{% if pageName %}{{ pageName + '.html' }}{% else %}{% endif %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style amp-boilerplate>
         body {
             -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -2220,6 +2221,10 @@
         .btn-black {
             box-shadow: 3px 3px 27px -3px #010101;
         }
+
+        .btn-small {
+            padding: 10px 30px;
+        }
         
         .btn-black,
         .btn-black:active,
@@ -3047,7 +3052,151 @@
         }
     </style>
 
+    <!-- ADDITIONAL LINKS BEGIN-->
+    {% if additional_links %}
+    {% for item in additional_links -%}
+        <link href="{{ item.link }}" rel="stylesheet">
+    {%- endfor %}
+    {% endif %}
+    <link rel="stylesheet" href="css/main.css">
+    <!-- ADDITIONAL LINKS END-->
+
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script async custom-element="amp-user-notification" src="https://cdn.ampproject.org/v0/amp-user-notification-0.1.js"></script>
+
+    </head>
+    <body>
+        <amp-sidebar id="sidebar" class="cid-rO890iqmw3" layout="nodisplay" side="right">
+            <div class="builder-sidebar" id="builder-sidebar">
+                <button on="tap:sidebar.close" class="close-sidebar">
+                    <span></span>
+                    <span></span>
+                </button>
+                <!-- NAVBAR ITEMS -->
+            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                {% if nav_data %}
+                {% for item in nav_data -%}
+                    <li class="nav-item" style="order: {{ item.order }}"><a class="nav-link mbr-regular link text-black display-4" href="{{item.link}}">{{ item.title }}</a></li>
+                {%- endfor %}
+                {% else %}
+                
+                <li class="nav-item"><a class="nav-link mbr-regular link text-black display-4" href="index.html">HOME</a></li>
+                <li class="nav-item"><a class="nav-link mbr-regular link text-black display-4" href="product.html">PRODUCT</a></li>
+                <li class="nav-item"><a class="nav-link mbr-regular link text-black display-4" href="use-cases.html">USE CASES</a></li>
+                <li class="nav-item"><a class="nav-link mbr-regular link text-black display-4" href="https://blog.air360.io" target="_blank">BLOG<br></a></li>
+                <li class="nav-item"><a class="nav-link mbr-regular link text-black display-4" href="https://app.air360.io/signin">LOG IN</a></li>
+                {% endif %}
+            </ul>
+                <!-- NAVBAR ITEMS END -->
+                <!-- SOCIAL ICON -->
+    
+                <!-- SOCIAL ICON END -->
+                <!-- SHOW BUTTON -->
+                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-md mbr-bold btn-primary-outline display-4" href="http://bit.ly/30DIgzu">Request access</a></div>
+                <!-- SHOW BUTTON END -->
+            </div>
+        </amp-sidebar>
+    
+        <!-- Analytics -->
+        <!-- Google Tag Manager -->
+        <script>
+            (function(w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    'gtm.start': new Date().getTime(),
+                    event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-NZH9N63');
+        </script>
+        <!-- End Google Tag Manager -->*
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZH9N63"
+    height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <!-- /Analytics -->
+        <style>
+            .gradient-word {
+                background-color: transparent;
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+                background-clip: text;
+                background-image: -webkit-linear-gradient(324deg, #016bff 40%, #1aa4ff);
+                background-image: -o-linear-gradient(324deg, #016bff 40%, #1aa4ff);
+                background-image: linear-gradient(-234deg, #016bff 40%, #1aa4ff);
+            }
+        </style>
+    
+    
+        <section class="menu1 menu horizontal-menu cid-rO890iqmw3" id="menu1-0">
+    
+            <!-- <div class="menu-wrapper"> -->
+            <nav class="navbar navbar-dropdown navbar-expand-lg navbar-fixed-top">
+                <div class="menu-container container">
+                    <!-- SHOW LOGO -->
+                    <div class="navbar-brand">
+                        <div class="navbar-logo">
+                            <amp-img src="assets/images/2-90x99.png" layout="responsive" width="40.90909090909091" height="45" alt="Mobirise" class="mobirise-loader">
+                                <div placeholder="" class="placeholder">
+                                    <div class="mobirise-spinner">
+                                        <em></em>
+                                        <em></em>
+                                        <em></em>
+                                    </div>
+                                </div>
+                                <a href="index.html"></a>
+                            </amp-img>
+                        </div>
+                        <span class="navbar-caption-wrap"><a class="navbar-caption mbr-semibold text-warning display-7" href="index.html"></a></span>
+                    </div>
+                    <!-- SHOW LOGO END -->
+                    <!-- COLLAPSED MENU -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+                         <!-- NAVBAR ITEMS -->
+                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                {% if nav_data %}
+                {% for item in nav_data -%}
+                <li class="nav-item" style="order: {{ item.order }}"><a class="nav-link mbr-regular link text-black display-4" href="{{item.link}}">{{ item.title }}</a></li>
+                {%- endfor %}
+                {% else %}
+                
+                <li class="nav-item"><a class="nav-link mbr-regular link text-black display-4" href="index.html">HOME</a></li>
+                <li class="nav-item"><a class="nav-link mbr-regular link text-black display-4" href="product.html">PRODUCT</a></li>
+                <li class="nav-item"><a class="nav-link mbr-regular link text-black display-4" href="use-cases.html">USE CASES</a></li>
+                <li class="nav-item"><a class="nav-link mbr-regular link text-black display-4" href="https://blog.air360.io" target="_blank">BLOG<br></a></li>
+                <li class="nav-item"><a class="nav-link mbr-regular link text-black display-4" href="https://app.air360.io/signin">LOG IN</a></li>
+                {% endif %}
+                </ul>
+                        <!-- NAVBAR ITEMS END -->
+                        <!-- SOCIAL ICON -->
+    
+                        <!-- SOCIAL ICON END -->
+                        <!-- SHOW BUTTON -->
+                        <div class="navbar-buttons mbr-section-btn"><a class="btn btn-md mbr-bold btn-primary-outline display-4" href="http://bit.ly/30DIgzu">Request access</a></div>
+                        <!-- SHOW BUTTON END -->
+                    </div>
+                    <!-- COLLAPSED MENU END -->
+    
+                    <button on="tap:sidebar.toggle" class="ampstart-btn hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                </div>
+            </nav>
+            <!-- AMP plug -->
+    
+            <!-- </div> -->
+        </section>
+    

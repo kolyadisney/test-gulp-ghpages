@@ -78,6 +78,8 @@ function watch() {
     gulp.watch(paths.styles.src, style);
     gulp.watch(paths.html.src, html);
     gulp.watch(paths.js.src, js);
+    gulp.watch(paths.styles.src).on('change', reload);
+    gulp.watch(paths.js.src).on('change', reload);
     gulp.watch(paths.html.src).on('change', reload);
 }
 

@@ -3754,7 +3754,7 @@
                     res.map(item => {
                         if (item.gs$cell.row === '10' && item.gs$cell.col === '2') {
                             const phrase = item.gs$cell.inputValue;
-                            var word = 'increase ';
+                            var word = 'increase';
                             var output = phrase.replace(new RegExp('(' + word + ')'), '<span class="gradient-word">$1</span>');
                             $('.brands-section__title h2').html(output);
                         }

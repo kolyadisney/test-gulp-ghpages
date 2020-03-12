@@ -3744,25 +3744,26 @@
             </div>
         </div>
     </section>
-<script>
-    (function($) {
-        $(document).ready(function() {
-            let sheetUrl = 'https://spreadsheets.google.com/feeds/cells/1Lu2mZ92J2Px3EoqksWlOuUWbD5VPg4JpjADZfd5TfIM/1/public/full?alt=json';
-            $.getJSON(sheetUrl, function(data) {
-                let res = data.feed.entry
-                res.map(item => {
-                    if (item.gs$cell.row === '10' && item.gs$cell.col === '2') {
-                        const phrase = item.gs$cell.inputValue;
-                        var word = 'increase ';
-                        var output = phrase.replace(new RegExp('(' + word + ')'), '<span class="gradient-word">$1</span>');
-                        $('.brands-section__title h2').html(output);
-                    }
+    <script src="pricingpage-assets/jquery-2.2.4.js"></script>
+    <script>
+        (function($) {
+            $(document).ready(function() {
+                let sheetUrl = 'https://spreadsheets.google.com/feeds/cells/1Lu2mZ92J2Px3EoqksWlOuUWbD5VPg4JpjADZfd5TfIM/1/public/full?alt=json';
+                $.getJSON(sheetUrl, function(data) {
+                    let res = data.feed.entry
+                    res.map(item => {
+                        if (item.gs$cell.row === '10' && item.gs$cell.col === '2') {
+                            const phrase = item.gs$cell.inputValue;
+                            var word = 'increase ';
+                            var output = phrase.replace(new RegExp('(' + word + ')'), '<span class="gradient-word">$1</span>');
+                            $('.brands-section__title h2').html(output);
+                        }
+                    })
                 })
             })
-        })
-
-    })(jQuery)
-</script>
+    
+        })(jQuery)
+    </script>
     
 <!-- END content -->
 <section class="footer2 cid-rO8C1drTyG custom-footer" id="footer2-b">
